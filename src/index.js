@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import "./index.css";
 import "./App.css";
 import Signup from "./components/Signup";
+import Dashboard from "./components/Dashboard";
 // import App from "./App";
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="signup" element={<Signup />} />
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

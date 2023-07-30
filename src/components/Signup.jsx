@@ -1,7 +1,18 @@
 import React from "react";
 import growprofitlogo3 from "./images/growprofitlogo3.png";
+import { useState } from "react";
 
 function Signup() {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The information you enter is as follow: ${name} ${email} ${password}`)
+  }
+
+
   return (
     
     <div className="login">
@@ -11,17 +22,17 @@ function Signup() {
         <img src={growprofitlogo3} alt="Logo" />
       </div>
 
-      <form className="loginform">
+      <form onSubmit={handleSubmit} className="loginform">
         <h3>SignUp to GrowProfit</h3>
         <label>
-          <input type="text" placeholder="Full Name" />
+          <input type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder="Full Name" />
         </label>
         <label>
-          <input type="text" placeholder="Email" />
+          <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email" />
         </label>
 
         <label>
-          <input type="text" placeholder="Password" />
+          <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)}placeholder="Password" />
         </label>
 
         <input className="btn" type="submit" value="SignUp" />
